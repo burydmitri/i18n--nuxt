@@ -53,37 +53,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    'nuxt-i18n',
   ],
-
-  i18n: {
-    locales: ['ru', 'en'],
-    defaultLocale: 'ru',
-    vueI18n: {
-      fallbackLocale: 'ru',
-      messages: {
-        ru: {
-          hello: 'Привет, Мир!',
-        },
-        en: {
-          hello: 'Hello, World!',
-        },
-      },
-      ru: {
-        buttons: {
-          ru: 'Русский',
-          en: 'Английский',
-        },
-      },
-      en: {
-        buttons: {
-          ru: 'Rusian',
-          en: 'English',
-        },
-      },
-    },
-  },
-
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
