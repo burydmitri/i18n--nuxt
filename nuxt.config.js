@@ -60,25 +60,28 @@ export default {
     locales: ['ru', 'en'],
     defaultLocale: 'ru',
     vueI18n: {
+      silentFallbackWarn: true,
       fallbackLocale: 'ru',
       messages: {
         ru: {
-          hello: 'Привет, Мир!',
+          message: {
+            hello: 'Привет, Мир!',
+            greeting: 'Доброе утро',
+          },
+          button: {
+            russian: 'Русский',
+            english: 'Английский',
+          },
         },
         en: {
-          hello: 'Hello, World!',
-        },
-      },
-      ru: {
-        buttons: {
-          ru: 'Русский',
-          en: 'Английский',
-        },
-      },
-      en: {
-        buttons: {
-          ru: 'Rusian',
-          en: 'English',
+          message: {
+            hello: 'Hello, World!',
+            greeting: 'good morning',
+          },
+          button: {
+            russian: 'Rusian',
+            english: 'English',
+          },
         },
       },
     },

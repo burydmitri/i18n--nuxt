@@ -1,16 +1,16 @@
 <template>
   <div class="home">
-    <h2 class="home__title">{{ $t('hello') }}</h2>
+    <h1 class="home__title">{{ $t('message.hello') }}</h1>
     <div class="buttons home__buttons">
       <nuxt-link
         :to="switchLocalePath('ru')"
         class="buttons__btn buttons__btn--ru"
-        >{{ $t('buttons.ru') }}</nuxt-link
+        >{{ $t('button.russian') }}</nuxt-link
       >
       <nuxt-link
         :to="switchLocalePath('en')"
         class="buttons__btn buttons__btn--en"
-        >{{ $t('buttons.en') }}</nuxt-link
+        >{{ $t('button.english') }}</nuxt-link
       >
     </div>
   </div>
@@ -50,14 +50,17 @@ export default {}
     display: block;
 
     color: var(--white);
+    font-weight: 700;
     background-color: var(--red);
     text-decoration: none;
     transition: 0.1s;
+    text-align: center;
 
     padding: 20px;
 
     &:hover {
-      background-color: darken(#f47265, 1 0%);
+      color: var(--black);
+      background-color: var(--green);
     }
   }
 }
