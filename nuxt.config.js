@@ -60,10 +60,12 @@ export default {
     locales: [
       {
         code: 'ru',
+        iso: 'ru',
         file: 'ru.js',
       },
       {
         code: 'en',
+        iso: 'en',
         file: 'en.js',
       },
     ],
@@ -74,6 +76,9 @@ export default {
     },
     lazy: true,
     langDir: 'locales/',
+
+    seo: false,
+    baseUrl: 'https://github.com/burydmitri',
   },
 
   /*

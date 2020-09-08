@@ -15,6 +15,15 @@
     </div>
     <!-- <p v-t="'message.hello'"></p> -->
     <!-- <p>{{ $t('message.hello') }}</p> -->
+
+    <div class="content home__content">
+      <h3 class="content__title">
+        {{ $t('homeInfo.title') }}
+      </h3>
+      <p class="content__info">
+        {{ $t('homeInfo.content') }}
+      </p>
+    </div>
   </div>
 </template>
 
@@ -25,7 +34,7 @@ export default {}
 <style lang="less" scoped>
 .home {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -34,6 +43,8 @@ export default {}
 
   color: var(--white);
   background: var(--black);
+
+  padding-top: 30vh;
 
   &__title {
     font-size: 50px;
@@ -64,8 +75,21 @@ export default {}
 
     &:hover {
       color: var(--black);
-      background-color: var(--green);
+      background-color: var(--white);
     }
+  }
+}
+.content {
+  max-width: 500px;
+
+  color: var(--white);
+  font-weight: 300;
+  text-align: center;
+
+  margin: 50px 0;
+
+  &__title {
+    margin-bottom: 10px;
   }
 }
 </style>
