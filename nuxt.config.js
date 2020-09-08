@@ -57,34 +57,23 @@ export default {
   ],
 
   i18n: {
-    locales: ['ru', 'en'],
-    defaultLocale: 'ru',
+    locales: [
+      {
+        code: 'ru',
+        file: 'ru.js',
+      },
+      {
+        code: 'en',
+        file: 'en.js',
+      },
+    ],
+    defaultLocale: 'en',
     vueI18n: {
       silentFallbackWarn: true,
       fallbackLocale: 'ru',
-      messages: {
-        ru: {
-          message: {
-            hello: 'Привет, Мир!',
-            greeting: 'Доброе утро',
-          },
-          button: {
-            russian: 'Русский',
-            english: 'Английский',
-          },
-        },
-        en: {
-          message: {
-            hello: 'Hello, World!',
-            greeting: 'good morning',
-          },
-          button: {
-            russian: 'Rusian',
-            english: 'English',
-          },
-        },
-      },
     },
+    lazy: true,
+    langDir: 'locales/',
   },
 
   /*

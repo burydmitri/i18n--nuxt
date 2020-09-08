@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1 class="home__title">{{ $t('message.hello') }}</h1>
+    <h1 class="home__title">{{ $t('homeIntro.title') }}</h1>
     <div class="buttons home__buttons">
       <nuxt-link
         :to="switchLocalePath('ru')"
@@ -13,6 +13,8 @@
         >{{ $t('button.english') }}</nuxt-link
       >
     </div>
+    <!-- <p v-t="'message.hello'"></p> -->
+    <!-- <p>{{ $t('message.hello') }}</p> -->
   </div>
 </template>
 
@@ -53,10 +55,12 @@ export default {}
     font-weight: 700;
     background-color: var(--red);
     text-decoration: none;
-    transition: 0.1s;
+    transition: 0.2s;
     text-align: center;
+    border-radius: 10px;
 
     padding: 20px;
+    margin-bottom: 10px;
 
     &:hover {
       color: var(--black);
