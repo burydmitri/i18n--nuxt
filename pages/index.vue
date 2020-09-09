@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1 class="home__title">{{ $t('homeIntro.title') }}</h1>
+    <h3 class="home__title">{{ $t('hello') }}</h3>
     <div class="buttons home__buttons">
       <nuxt-link
         :to="switchLocalePath('ru')"
@@ -17,18 +18,23 @@
     <!-- <p>{{ $t('message.hello') }}</p> -->
 
     <div class="content home__content">
-      <h3 class="content__title">
-        {{ $t('homeInfo.title') }}
-      </h3>
-      <p class="content__info">
-        {{ $t('homeInfo.content') }}
-      </p>
+      <h3 class="content__title">{{ $t('homeInfo.title') }}</h3>
+      <p class="content__info">{{ $t('homeInfo.content') }}</p>
+      <p>{{ test.testRu }}</p>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  async asyncData({ $axios }) {
+    const data = await $axios.$get('http://localhost:1337/i-18-ns')
+    return { test: data[0] }
+  },
+  en: {
+    hello: 'Hello, world!',
+  },
+}
 </script>
 
 <style lang="less" scoped>
