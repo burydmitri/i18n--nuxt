@@ -11,14 +11,12 @@
         {{ locale.name }}
       </nuxt-link>
     </div>
-    <!-- <p v-t="'message.hello'"></p> -->
-    <!-- <p>{{ $t('message.hello') }}</p> -->
-
     <div class="content home__content">
       <h3 class="content__title">{{ $t('homeInfo.title') }}</h3>
       <p class="content__info">{{ $t('homeInfo.content') }}</p>
       <p>{{ trslt[`test_${$i18n.locale}`] }}</p>
       <p>{{ trslt[`test2_${$i18n.locale}`] }}</p>
+      <p>{{ $t('component.data') }}</p>
     </div>
   </div>
 </template>
@@ -32,15 +30,13 @@ export default {
   i18n: {
     messages: {
       ru: {
-        tests: {
-          test1: 'теeeст',
-          test2_ru: 'тессссст',
+        component: {
+          data: 'Локальные данные компонента',
         },
       },
       en: {
-        tests: {
-          test1: 'tessssts',
-          test2_en: 'T E S T',
+        component: {
+          data: 'Local component data',
         },
       },
     },
