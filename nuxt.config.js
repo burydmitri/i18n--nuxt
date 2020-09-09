@@ -59,11 +59,13 @@ export default {
   i18n: {
     locales: [
       {
+        name: 'Русский',
         code: 'ru',
         iso: 'ru',
         file: 'ru.js',
       },
       {
+        name: 'English',
         code: 'en',
         iso: 'en',
         file: 'en.js',

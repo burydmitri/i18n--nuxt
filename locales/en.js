@@ -1,8 +1,4 @@
 export default {
-  button: {
-    russian: 'Rusian',
-    english: 'English',
-  },
   homeIntro: {
     title: 'Hello, World!',
   },

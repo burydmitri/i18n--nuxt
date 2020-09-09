@@ -3,15 +3,13 @@
     <h1 class="home__title">{{ $t('homeIntro.title') }}</h1>
     <div class="buttons home__buttons">
       <nuxt-link
-        :to="switchLocalePath('ru')"
-        class="buttons__btn buttons__btn--ru"
-        >{{ $t('button.russian') }}</nuxt-link
+        v-for="locale in locales"
+        :key="locale.code"
+        :to="switchLocalePath(locale.code)"
+        class="buttons__btn"
       >
-      <nuxt-link
-        :to="switchLocalePath('en')"
-        class="buttons__btn buttons__btn--en"
-        >{{ $t('button.english') }}</nuxt-link
-      >
+        {{ locale.name }}
+      </nuxt-link>
     </div>
     <!-- <p v-t="'message.hello'"></p> -->
     <!-- <p>{{ $t('message.hello') }}</p> -->
@@ -19,7 +17,7 @@
     <div class="content home__content">
       <h3 class="content__title">{{ $t('homeInfo.title') }}</h3>
       <p class="content__info">{{ $t('homeInfo.content') }}</p>
-      <p>{{ test.testRu }}</p>
+      <p>{{ trslt.testRu }}</p>
       <p>{{ $t('tests.test2') }}</p>
     </div>
   </div>
@@ -29,13 +27,13 @@
 export default {
   async asyncData({ $axios }) {
     const data = await $axios.$get('http://localhost:1337/i-18-ns')
-    return { test: data[0] }
+    return { trslt: data[0] }
   },
   i18n: {
     messages: {
       ru: {
         tests: {
-          test1: 'тееест',
+          test1: 'теeeст',
           test2: 'тессссст',
         },
       },
@@ -46,20 +44,11 @@ export default {
         },
       },
     },
-    // content: {
-    //   ru: {
-    //     tests: {
-    //       test1: 'тееест',
-    //       test2: 'тессссст',
-    //     },
-    //   },
-    //   en: {
-    //     tests: {
-    //       test1: 'tessssts',
-    //       test2: 'T E S T',
-    //     },
-    //   },
-    // },
+  },
+  computed: {
+    locales() {
+      return this.$i18n.locales
+    },
   },
 }
 </script>

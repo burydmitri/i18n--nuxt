@@ -1,8 +1,4 @@
 export default {
-  button: {
-    russian: 'Русский',
-    english: 'Английский',
-  },
   homeIntro: {
     title: 'Привет, Мир!',
   },
