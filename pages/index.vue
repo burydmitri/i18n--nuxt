@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <h1 class="home__title">{{ $t('homeIntro.title') }}</h1>
-    <h3 class="home__title">{{ $t('hello') }}</h3>
     <div class="buttons home__buttons">
       <nuxt-link
         :to="switchLocalePath('ru')"
@@ -21,6 +20,7 @@
       <h3 class="content__title">{{ $t('homeInfo.title') }}</h3>
       <p class="content__info">{{ $t('homeInfo.content') }}</p>
       <p>{{ test.testRu }}</p>
+      <p>{{ $t('tests.test2') }}</p>
     </div>
   </div>
 </template>
@@ -31,8 +31,35 @@ export default {
     const data = await $axios.$get('http://localhost:1337/i-18-ns')
     return { test: data[0] }
   },
-  en: {
-    hello: 'Hello, world!',
+  i18n: {
+    messages: {
+      ru: {
+        tests: {
+          test1: 'тееест',
+          test2: 'тессссст',
+        },
+      },
+      en: {
+        tests: {
+          test1: 'tessssts',
+          test2: 'T E S T',
+        },
+      },
+    },
+    // content: {
+    //   ru: {
+    //     tests: {
+    //       test1: 'тееест',
+    //       test2: 'тессссст',
+    //     },
+    //   },
+    //   en: {
+    //     tests: {
+    //       test1: 'tessssts',
+    //       test2: 'T E S T',
+    //     },
+    //   },
+    // },
   },
 }
 </script>
