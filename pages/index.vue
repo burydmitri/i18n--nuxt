@@ -17,8 +17,8 @@
     <div class="content home__content">
       <h3 class="content__title">{{ $t('homeInfo.title') }}</h3>
       <p class="content__info">{{ $t('homeInfo.content') }}</p>
-      <p>{{ trslt.testRu }}</p>
-      <p>{{ $t('tests.test2') }}</p>
+      <p>{{ trslt[`test_${$i18n.locale}`] }}</p>
+      <p>{{ trslt[`test2_${$i18n.locale}`] }}</p>
     </div>
   </div>
 </template>
@@ -34,13 +34,13 @@ export default {
       ru: {
         tests: {
           test1: 'теeeст',
-          test2: 'тессссст',
+          test2_ru: 'тессссст',
         },
       },
       en: {
         tests: {
           test1: 'tessssts',
-          test2: 'T E S T',
+          test2_en: 'T E S T',
         },
       },
     },
